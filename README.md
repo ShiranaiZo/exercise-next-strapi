@@ -1,0 +1,2 @@
+# exercise-next-strapi
+Excersie
