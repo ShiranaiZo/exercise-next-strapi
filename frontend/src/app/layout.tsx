@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../assets/scss/globals.scss";
-import { getGlobalPageData, getGlobalPageMetadata } from "@/data/loader";
+import { getGlobalPageData, getGlobalPageMetadata } from "@/data/loaders";
 import { Header } from "@/components/custom/Header";
 import { Footer } from "@/components/custom/Footer";
 

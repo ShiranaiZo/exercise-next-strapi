@@ -15,7 +15,7 @@ async function fetchData(url: string) {
         }
     }
 
-    try {
+    try {        
         const response = await fetch(url, authToken ? headers : {});
         const data = await response.json();
 

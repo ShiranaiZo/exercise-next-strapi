@@ -1,6 +1,6 @@
 import qs from "qs";
 import { HeroSection } from "@/components/custom/HeroSection";
-import { getHomePage } from "@/data/loader";
+import { getHomePage } from "@/data/loaders";
 
 export default async function Home() {
     const strapiData = await getHomePage();
