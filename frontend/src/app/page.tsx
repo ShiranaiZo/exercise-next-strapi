@@ -1,30 +1,14 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-// import styles from "./page.module.css";
-
-async function getStrapiData(url: string) {
-    const baseUrl = 'http://localhost:1337/api';
-
-    try {
-        const response = await fetch(`${baseUrl}${url}`);
-        const data = await response.json();
-
-        return data;
-    } catch (error) {
-        console.error('Error fetching Strapi data:', error);
-    }
-}
+import qs from "qs";
+import { HeroSection } from "@/components/custom/HeroSection";
+import { getHomePage } from "@/data/loader";
 
 export default async function Home() {
-    const strapiData = await getStrapiData('/home-page');
-
-    const {title, description} = strapiData.data;
-    // console.log('Strapi Data:', strapiData);
-
+    const strapiData = await getHomePage();
+    
+    const { title, description, blocks } = strapiData.data;
     return (
-        <main className="mx-auto py-6 min-h-screen antialiased">
-            <h1 className="text-4xl font-bold">{title}</h1>
-            <p className="mt-4">{description}</p>
+        <main>
+        <HeroSection data={blocks[0]} />
         </main>
     );
 }
